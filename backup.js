@@ -6,11 +6,10 @@ const execSync = require('child_process').execSync;
 const full_backup = `sudo /opt/couchbase/bin/cbbackup couchbase://${process.env.DB_HOST}:8091 /backup-events -m full --single-node -u ${process.env.DB_USER} -p '${process.env.DB_PASSWORD}' -b ${process.env.DB_BUCKET}`
 const incremental_backup = `sudo /opt/couchbase/bin/cbbackup couchbase://${process.env.DB_HOST}:8091 /backup-events -m diff --single-node -u ${process.env.DB_USER} -p '${process.env.DB_PASSWORD}' -b ${process.env.DB_BUCKET}`
 
-async function execute(type = 'full') {
+async function execute(type = 'incremental') {
 
   console.log(`${type}_backup`)
-  code = execSync(full_backup, { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 });
-  console.log(code.toString())
+  code = execSync(incremental_backup, { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 });
 
   // const fileContent = fs.readFileSync(fileName);
 
