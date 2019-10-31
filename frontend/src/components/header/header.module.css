@@ -1,0 +1,19 @@
+.header {
+  min-height: 4rem;
+  background-color: lightblue;
+  text-align: center;
+}
+
+.title {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.divInline {
+  /* display: inline-flex; */
+}
+
+.right {
+  /* float: right; */
+}
