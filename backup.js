@@ -4,17 +4,17 @@ const AWS = require('aws-sdk');
 const path = require("path");
 const execSync = require('child_process').execSync;
 
-const full_backup = `sudo /opt/couchbase/bin/cbbackup couchbase://${process.env.DB_HOST}:8091 /backup-events -m full --single-node -u ${process.env.DB_USER} -p '${process.env.DB_PASSWORD}' -b ${process.env.DB_BUCKET}`
-const incremental_backup = `sudo /opt/couchbase/bin/cbbackup couchbase://${process.env.DB_HOST}:8091 /backup-events -m diff --single-node -u ${process.env.DB_USER} -p '${process.env.DB_PASSWORD}' -b ${process.env.DB_BUCKET}`
+const full_backup = `sudo /opt/couchbase/bin/cbbackup couchbase://${process.env.DB_HOST}:8091 ./backup-events -m full --single-node -u ${process.env.DB_USER} -p '${process.env.DB_PASSWORD}' -b ${process.env.DB_BUCKET}`
+const incremental_backup = `sudo /opt/couchbase/bin/cbbackup couchbase://${process.env.DB_HOST}:8091 ./backup-events -m diff --single-node -u ${process.env.DB_USER} -p '${process.env.DB_PASSWORD}' -b ${process.env.DB_BUCKET}`
 
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY,
   secretAccessKey: process.env.AWS_ACCESS_SECRET
 });
 
-const execute = function (type = 'incremental') {
+const execute = function (type = 'full') {
   console.log(`${type}_backup`)
-  code = execSync(incremental_backup, { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 });
+  code = execSync(full_backup, { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 });
   console.log('->>>>>>>>>>', code)
 }
 
@@ -59,5 +59,5 @@ const uploadDir = function (s3Path, bucketName) {
 // }
 
 execute()
-uploadDir('/backup-events', 'backup-couchbase-tests');
+uploadDir('backup-events', 'backup-couchbase-tests');
 // clearDir('/backup-events')

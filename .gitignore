@@ -1,2 +1,8 @@
 node_modules/
 .env
+
+restores/*
+backup-events/*
+
+!restores/.gitkeep
+!backup-events/.gitkeep
