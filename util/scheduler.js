@@ -1,10 +1,8 @@
 const schedule = require('node-schedule');
-import * as backup from './backup';
 
 const rule = new schedule.RecurrenceRule();
 rule.minute = 0;
 
-const j = schedule.scheduleJob(rule, function () {
+const j = schedule.scheduleJob(rule, () => {
   console.log('running schedule!');
-  backup.execute();
-});
+})

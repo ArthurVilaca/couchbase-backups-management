@@ -11,12 +11,18 @@ AWS.config.update({
 });
 
 const execute = function (path) {
-  let command = `sudo /opt/couchbase/bin/cbrestore ${default_path + path} couchbase://${process.env.DB_HOST}:8091 -u ${process.env.DB_USER} -p '${process.env.DB_PASSWORD}' -b ${process.env.DB_BUCKET}`
-  code = execSync(command, { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 });
-  console.log('restored')
+  fs.readdirSync(default_path + path).forEach(function (name) {
+    if (name.indexOf('full') > -1) {
+      console.log('fullbackup', name)
+      let command = `sudo /opt/couchbase/bin/cbrestore ${default_path + path + '/' + name} couchbase://${process.env.DB_HOST}:8091 -u ${process.env.DB_USER} -p '${process.env.DB_PASSWORD}' --bucket-source=${process.env.DB_BUCKET}`
+      code = execSync(command, { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 });
+      console.log('restored')
+    }
+  })
+
 }
 
-const listBackups = function (bucket_name) {
+async function listBackups(bucket_name) {
   let s3 = new AWS.S3();
   let params = { Bucket: bucket_name, Delimiter: '/', };
 
@@ -25,7 +31,7 @@ const listBackups = function (bucket_name) {
   })
 }
 
-const syncBackup = function (PREFIX, BUCKET) {
+async function syncBackup(PREFIX, BUCKET) {
   var params = {
     Bucket: BUCKET,
     Prefix: PREFIX
@@ -49,7 +55,7 @@ const syncBackup = function (PREFIX, BUCKET) {
           callback(err);
         } else {
           // Read the file
-          var contents = fileContents.Body.toString();
+          var contents = fileContents.Body.toString('utf-8');
 
           let full_path = default_path + key
           // create folder path if not exists
@@ -59,7 +65,7 @@ const syncBackup = function (PREFIX, BUCKET) {
             return folderPath
           })
 
-          fs.writeFileSync(default_path + key, contents);
+          fs.writeFileSync(default_path + key, contents, { mode: 0777 });
           callback();
         }
       });
@@ -68,11 +74,13 @@ const syncBackup = function (PREFIX, BUCKET) {
         console.log('Failed: ' + err);
       } else {
         console.log('Finished download');
-        execute('2019-11-01T130855Z');
+        execute(PREFIX);
       }
     });
   });
 }
 
 // listBackups('backup-couchbase-tests')
-syncBackup('2019-11-01T130855Z', 'backup-couchbase-tests')
+// syncBackup('2019-11-01T181751Z', 'backup-couchbase-tests')
+
+module.exports = { listBackups, syncBackup };

@@ -5,20 +5,18 @@ const path = require("path");
 const execSync = require('child_process').execSync;
 
 const full_backup = `sudo /opt/couchbase/bin/cbbackup couchbase://${process.env.DB_HOST}:8091 ./backup-events -m full --single-node -u ${process.env.DB_USER} -p '${process.env.DB_PASSWORD}' -b ${process.env.DB_BUCKET}`
-const incremental_backup = `sudo /opt/couchbase/bin/cbbackup couchbase://${process.env.DB_HOST}:8091 ./backup-events -m diff --single-node -u ${process.env.DB_USER} -p '${process.env.DB_PASSWORD}' -b ${process.env.DB_BUCKET}`
+const incremental_backup = `sudo /opt/couchbase/bin/cbbackup couchbase://${process.env.DB_HOST}:8091 ./backup-events --mode=diff --single-node -u ${process.env.DB_USER} -p '${process.env.DB_PASSWORD}' -b ${process.env.DB_BUCKET}`
 
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY,
   secretAccessKey: process.env.AWS_ACCESS_SECRET
 });
 
-const execute = function (type = 'full') {
-  console.log(`${type}_backup`)
-  code = execSync(full_backup, { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 });
-  console.log('->>>>>>>>>>', code)
+async function execute(type = 'full') {
+  code = execSync(incremental_backup, { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 });
 }
 
-const uploadDir = function (s3Path, bucketName) {
+async function uploadDir(s3Path, bucketName) {
   let s3 = new AWS.S3();
   function walkSync(currentDirPath, callback) {
     fs.readdirSync(currentDirPath).forEach(function (name) {
@@ -46,18 +44,7 @@ const uploadDir = function (s3Path, bucketName) {
   });
 };
 
-// const clearDir = function (dirPath) {
-//   fs.readdir(dirPath, (err, files) => {
-//     if (err) throw err;
-
-//     for (const file of files) {
-//       fs.unlink(path.join(dirPath, file), err => {
-//         if (err) throw err;
-//       });
-//     }
-//   });
-// }
-
 execute()
 uploadDir('backup-events', 'backup-couchbase-tests');
-// clearDir('/backup-events')
+
+module.exports = { execute, uploadDir };
