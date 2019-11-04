@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 require('dotenv').config();
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
@@ -9,6 +10,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(cors())
 
 // base requests router
 const routes = require('./routes');

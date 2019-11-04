@@ -1,36 +1,10 @@
-class Service {
-  constructor() {
-      this.state = {
-          'Authorization': ''
-      }
-  }
+import axios from 'axios';
+const BASE_URL = 'http://localhost:4444'
 
-  validateRequest(data) {
-      return new Promise((resolve, reject) => {
-          resolve(data)
-      });
-  }
-
-  setToken = (token) => {
-      this.state.Authorization = token;
-  }
-
-  get = (url) => {
-      
-  }
-
-  post = (url, data) => {
-      
-  }
-
-  put = (url, data) => {
-      
-  }
-
-  delete = (url) => {
-      
-  }
-
+export async function get(url) {
+	return await axios.get(BASE_URL + url)
 }
 
-export default Service;
+export async function post(url, data) {
+	return await axios.post(BASE_URL + url, data)
+}

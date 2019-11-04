@@ -1,11 +1,17 @@
-import { } from "../constants/action-types";
-import uuidv1 from 'uuid/v1';
+import { GET_MONITOR } from "../constants/action-types";
 
 const initialState = {
-  current_user: {}
+  monitor: {},
 };
 
-function rootReducer(state = initialState, action) {
+async function rootReducer(state = initialState, action) {
+  if (action.type === GET_MONITOR) {
+    console.log(action)
+    return Object.assign({}, state, {
+      monitor: action.payload
+    });
+  }
+
   return state;
 };
 
