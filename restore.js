@@ -22,12 +22,14 @@ const execute = function (path) {
 
 }
 
-async function listBackups(bucket_name) {
+async function listBackups(bucket_name = 'backup-couchbase-tests') {
   let s3 = new AWS.S3();
   let params = { Bucket: bucket_name, Delimiter: '/', };
 
-  s3.listObjects(params, function (err, data) {
-    console.log(data)
+  return new Promise((resolve, reject) => {
+    s3.listObjects(params, function (err, data) {
+      resolve(data)
+    })
   })
 }
 

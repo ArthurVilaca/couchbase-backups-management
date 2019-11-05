@@ -44,7 +44,7 @@ async function uploadDir(s3Path, bucketName) {
   });
 };
 
-execute()
-uploadDir('backup-events', 'backup-couchbase-tests');
+// execute()
+// uploadDir('backup-events', 'backup-couchbase-tests');
 
 module.exports = { execute, uploadDir };
