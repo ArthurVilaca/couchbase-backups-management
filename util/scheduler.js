@@ -11,6 +11,8 @@ rule.minute = 0;
 
 const j = schedule.scheduleJob(rule, async () => {
   console.log('running schedule j!');
+  if (process.env.NODE_ENV != 'production') return console.log('skipping');
+
   let results = await monitoring.monitor()
   if (results.free_men / results.total_men < 0.1) {
     notify.push(null, 'total cluster memory')
@@ -34,6 +36,8 @@ const j = schedule.scheduleJob(rule, async () => {
 
 const y = schedule.scheduleJob(rule, async () => {
   console.log('running schedule y!');
+  if (process.env.NODE_ENV != 'production') return console.log('skipping');
+
   backup.execute()
   backup.uploadDir('backup-events', 'backup-couchbase-tests')
 })

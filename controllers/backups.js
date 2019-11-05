@@ -1,4 +1,3 @@
-const backup = require('../backup');
 const restore = require('../restore');
 
 async function list(req, res, next) {
@@ -14,4 +13,9 @@ async function list(req, res, next) {
     })
 }
 
-module.exports = { list };
+async function execute(req, res, next) {
+  await restore.syncBackup(req.body.name, process.env.BACKUP_BUCKET)
+  res.json({ valid: true })
+}
+
+module.exports = { list, execute };
