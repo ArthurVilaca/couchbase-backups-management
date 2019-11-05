@@ -1,14 +1,15 @@
-require('dotenv').config()
 const os = require('os');
 const axios = require('axios')
 
+let options, response
+
 async function monitor() {
-  let options = {
+  options = {
     headers: {
       Authorization: `Basic ${Buffer.from(`${process.env.DB_USER}:${process.env.DB_PASSWORD}`).toString('base64')}`
     }
   }
-  let response = await axios.get(`http://${process.env.DB_HOST}:8091/pools/nodes`, options)
+  response = await axios.get(`http://${process.env.DB_HOST}:8091/pools/nodes`, options)
 
   return {
     cpu: os.cpus(),
