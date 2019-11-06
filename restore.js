@@ -91,14 +91,24 @@ async function syncBackup(PREFIX, BUCKET) {
 
 module.exports = { listBackups, syncBackup };
 
-if (process.argv[2] && process.argv[1].indexOf('restore.js') > -1) {
-  listBackups()
-    .then(backups => {
-      let backup = backups.CommonPrefixes[process.argv[2]]
-      console.log('restoring', backup)
-      syncBackup(backup.Prefix, process.env.BACKUP_BUCKET)
-        .then(data => {
-          console.log(data)
-        })
-    })
+if (process.argv[1].indexOf('restore.js') > -1) {
+  console.log('manual restore')
+  if (process.argv[2]) {
+    listBackups()
+      .then(backups => {
+        let backup = backups.CommonPrefixes[process.argv[2]]
+        console.log('restoring', backup)
+        syncBackup(backup.Prefix, process.env.BACKUP_BUCKET)
+          .then(data => {
+            console.log(data)
+          })
+      })
+  } else {
+    listBackups()
+      .then(backups => {
+        for (let backup of backups.CommonPrefixes) {
+          console.log(backup.Prefix)
+        }
+      })
+  }
 }
