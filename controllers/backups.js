@@ -6,16 +6,20 @@ async function list(req, res, next) {
       res.json(data)
     })
     .catch(error => {
-      {
-        console.log(error)
-        res.json([])
-      }
+      console.log(error)
+      res.json({})
     })
 }
 
 async function execute(req, res, next) {
-  await restore.syncBackup(req.body.name, process.env.BACKUP_BUCKET)
-  res.json({ valid: true })
+  restore.syncBackup(req.body.name, process.env.BACKUP_BUCKET)
+    .then(data => {
+      res.json({ valid: true })
+    })
+    .catch(error => {
+      console.log(error)
+      res.json({})
+    })
 }
 
 module.exports = { list, execute };

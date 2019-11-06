@@ -6,7 +6,7 @@ import * as service from '../../service'
 class BackupsPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { backups: null }
+    this.state = { backups: null, processing: false }
   }
 
   async componentDidMount() {
@@ -14,17 +14,24 @@ class BackupsPage extends Component {
     this.setState({ backups: data.CommonPrefixes })
   }
 
+  async execute(backup) {
+    this.setState({ processing: true })
+    let { data } = await service.post('/backups', { name: backup })
+    console.log(data)
+    this.setState({ processing: false })
+  }
 
   render() {
     let backups = this.state.backups;
     if (!backups) return (<div>loading...</div>)
     if (backups.length == 0) return (<div>no backups...</div>)
+    if (this.state.processing) return (<div>restore in progress....</div>)
     return (
       <div className={styles.section}>
         {
           backups.map((backup, idx) => {
             return (
-              <div className={styles.item}>
+              <div key={idx} className={styles.item} onClick={() => { this.execute(backup.Prefix) }}>
                 backup {idx + 1}: {backup.Prefix}
               </div>
             )

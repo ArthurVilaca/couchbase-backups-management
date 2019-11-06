@@ -40,49 +40,65 @@ async function syncBackup(PREFIX, BUCKET) {
   }
 
   const s3 = new AWS.S3();
-  s3.listObjects(params, function (err, data) {
-    if (err) return console.log(err);
 
-    async.eachSeries(data.Contents, function (fileObj, callback) {
-      var key = fileObj.Key;
-      console.log('Downloading: ' + key);
+  return new Promise((resolve, reject) => {
+    s3.listObjects(params, function (err, data) {
+      if (err) return console.log(err);
 
-      var fileParams = {
-        Bucket: BUCKET,
-        Key: key
-      }
+      async.eachSeries(data.Contents, function (fileObj, callback) {
+        var key = fileObj.Key;
+        console.log('Downloading: ' + key);
 
-      s3.getObject(fileParams, function (err, fileContents) {
+        var fileParams = {
+          Bucket: BUCKET,
+          Key: key
+        }
+
+        s3.getObject(fileParams, function (err, fileContents) {
+          if (err) {
+            callback(err);
+          } else {
+            // Read the file
+            var contents = fileContents.Body.toString('utf-8');
+
+            let full_path = default_path + key
+            // create folder path if not exists
+            full_path.split('/').slice(0, -1).reduce((last, folder) => {
+              let folderPath = last ? (last + '/' + folder) : folder
+              if (!fs.existsSync(folderPath)) fs.mkdirSync(folderPath)
+              return folderPath
+            })
+
+            fs.writeFileSync(default_path + key, contents, { mode: 0777 });
+            callback();
+          }
+        });
+      }, function (err) {
         if (err) {
-          callback(err);
+          console.log('Failed: ' + err);
         } else {
-          // Read the file
-          var contents = fileContents.Body.toString('utf-8');
-
-          let full_path = default_path + key
-          // create folder path if not exists
-          full_path.split('/').slice(0, -1).reduce((last, folder) => {
-            let folderPath = last ? (last + '/' + folder) : folder
-            if (!fs.existsSync(folderPath)) fs.mkdirSync(folderPath)
-            return folderPath
-          })
-
-          fs.writeFileSync(default_path + key, contents, { mode: 0777 });
-          callback();
+          console.log('Finished download');
+          execute(PREFIX);
+          resolve(true)
         }
       });
-    }, function (err) {
-      if (err) {
-        console.log('Failed: ' + err);
-      } else {
-        console.log('Finished download');
-        execute(PREFIX);
-      }
     });
-  });
+  })
 }
 
 // listBackups('backup-couchbase-tests')
 // syncBackup('2019-11-01T181751Z', 'backup-couchbase-tests')
 
 module.exports = { listBackups, syncBackup };
+
+if (process.argv[2] && process.argv[1].indexOf('restore.js') > -1) {
+  listBackups()
+    .then(backups => {
+      let backup = backups.CommonPrefixes[process.argv[2]]
+      console.log('restoring', backup)
+      syncBackup(backup.Prefix, process.env.BACKUP_BUCKET)
+        .then(data => {
+          console.log(data)
+        })
+    })
+}
