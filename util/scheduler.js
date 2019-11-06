@@ -6,10 +6,9 @@ const notify = require('./notify')
 const MIN_FREE_STORAGE = 50 * 1024 * 1024
 const MAX_CPU_UTILIZATION = 90
 
-const rule = new schedule.RecurrenceRule();
-rule.minute = 0;
-
-const j = schedule.scheduleJob(rule, async () => {
+const monitoring_rule = new schedule.RecurrenceRule();
+monitoring_rule.minute = new schedule.Range(0, 59, 5);
+const j = schedule.scheduleJob(monitoring_rule, async () => {
   console.log('running schedule j!');
   if (process.env.NODE_ENV != 'production') return console.log('skipping');
 
@@ -33,7 +32,8 @@ const j = schedule.scheduleJob(rule, async () => {
   }
 })
 
-
+const rule = new schedule.RecurrenceRule();
+rule.minute = 0;
 const y = schedule.scheduleJob(rule, async () => {
   console.log('running schedule y!');
   if (process.env.NODE_ENV != 'production') return console.log('skipping');
