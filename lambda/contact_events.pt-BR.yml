@@ -1,0 +1,42 @@
+pt-BR:
+  recipient_status_changed_event:
+    title: Status alterado para %{status}
+  contact_added_to_flow_event:
+    title: Enviado para o fluxo
+  email_event:
+    title:
+      delivery: Recebeu o e-mail
+      open: Leu o e-mail
+      reply: Respondeu o e-mail
+      bounce: E-mail rejeitado
+      soft_bounce: Falha temporária no envio do email
+  contact_created_event:
+    title: Adicionado na base de contatos
+  contact_stage_changed_event:
+    title: Qualificado como %{stage}
+  contact_removed_from_flow_event:
+    title: Removido do fluxo
+  contact_created_by_pipedrive_event:
+    title: Importado via Pipedrive
+  contact_created_by_rd_station_event:
+    title: Importado via RD Station
+  contact_updated_by_pipedrive_event:
+    title: Convertido via Pipedrive
+  contact_created_by_sharp_spring_event:
+    title: Importado via SharpSpring
+  contact_updated_by_rd_station_event:
+    title: Convertido via RD Station
+  contact_updated_by_sharp_spring_event:
+    title: Convertido via SharpSpring
+  contact_created_by_lead_gen_event:
+    title: Importado via Lead Gen
+  contact_created_by_hubspot_event:
+    title: Importado via Hubspot
+  contact_updated_by_hubspot_event:
+    title: Convertido via Hubspot
+  comment_event:
+    title: Comentário criado
+  call_event:
+    title: Ligou para o número %{phone_number}
+  task_destroyed_event:
+    title: Tarefa excluída

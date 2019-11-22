@@ -1,0 +1,800 @@
+[
+  {
+    "user": {
+      "id": 1,
+      "name": "Admin"
+    },
+    "data": {
+      "prospects": 0,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 6,
+      "name": "Vinícius Mayrink"
+    },
+    "data": {
+      "prospects": 4,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 12,
+      "name": "Larissa Torres Machado"
+    },
+    "data": {
+      "prospects": 235,
+      "opportunity": 5,
+      "business": 3,
+      "client": 0,
+      "lost": 2,
+      "delivery": 7,
+      "reply": 10,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 12,
+      "connected_calls": 0,
+      "leads": 3,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 13,
+      "name": "Pietsch"
+    },
+    "data": {
+      "prospects": 0,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 22,
+      "name": "Júlia Paixão"
+    },
+    "data": {
+      "prospects": 128,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 3,
+      "reply": 1,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 245,
+      "name": "André Barbosa"
+    },
+    "data": {
+      "prospects": 26,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 337,
+      "name": "Túlio Andrade"
+    },
+    "data": {
+      "prospects": 34,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 1191,
+      "name": "Sérgio Nazar"
+    },
+    "data": {
+      "prospects": 72,
+      "opportunity": 1,
+      "business": 4,
+      "client": 0,
+      "lost": 9,
+      "delivery": 49,
+      "reply": 12,
+      "bounce": 3,
+      "flows": 1,
+      "calls": 29,
+      "connected_calls": 0,
+      "leads": 7,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 1832,
+      "name": "Aline Lello"
+    },
+    "data": {
+      "prospects": 17,
+      "opportunity": 1,
+      "business": 0,
+      "client": 0,
+      "lost": 2,
+      "delivery": 3,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 2100,
+      "name": "Vinicius Sá"
+    },
+    "data": {
+      "prospects": 72,
+      "opportunity": 0,
+      "business": 0,
+      "client": 1,
+      "lost": 1,
+      "delivery": 7,
+      "reply": 4,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 9,
+      "connected_calls": 0,
+      "leads": 1,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 2144,
+      "name": "Ana Carolina "
+    },
+    "data": {
+      "prospects": 0,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 2223,
+      "name": "Gabriel Baeta"
+    },
+    "data": {
+      "prospects": 27,
+      "opportunity": 1,
+      "business": 2,
+      "client": 0,
+      "lost": 4,
+      "delivery": 11,
+      "reply": 5,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 14,
+      "connected_calls": 0,
+      "leads": 3,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 2224,
+      "name": "Joyce Aureliano"
+    },
+    "data": {
+      "prospects": 9,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 2594,
+      "name": "Luiz Bemfica"
+    },
+    "data": {
+      "prospects": 50,
+      "opportunity": 5,
+      "business": 1,
+      "client": 0,
+      "lost": 1,
+      "delivery": 22,
+      "reply": 15,
+      "bounce": 0,
+      "flows": 2,
+      "calls": 25,
+      "connected_calls": 1,
+      "leads": 2,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 2596,
+      "name": "Chris"
+    },
+    "data": {
+      "prospects": 73,
+      "opportunity": 10,
+      "business": 4,
+      "client": 0,
+      "lost": 6,
+      "delivery": 12,
+      "reply": 5,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 19,
+      "connected_calls": 0,
+      "leads": 5,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 2709,
+      "name": "Reev"
+    },
+    "data": {
+      "prospects": 4,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 2737,
+      "name": "Isadora Luz"
+    },
+    "data": {
+      "prospects": 3,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 2836,
+      "name": "Eduardo"
+    },
+    "data": {
+      "prospects": 83,
+      "opportunity": 13,
+      "business": 1,
+      "client": 0,
+      "lost": 1,
+      "delivery": 15,
+      "reply": 9,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 51,
+      "connected_calls": 0,
+      "leads": 2,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3347,
+      "name": "Davi"
+    },
+    "data": {
+      "prospects": 1,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3427,
+      "name": "Ana Beatriz"
+    },
+    "data": {
+      "prospects": 0,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 1,
+      "calls": 1,
+      "connected_calls": 1,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3428,
+      "name": "Fernanda Portela"
+    },
+    "data": {
+      "prospects": 1,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3445,
+      "name": "Felipe"
+    },
+    "data": {
+      "prospects": 0,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3545,
+      "name": "Ivan Pinheiro"
+    },
+    "data": {
+      "prospects": 114,
+      "opportunity": 6,
+      "business": 13,
+      "client": 0,
+      "lost": 5,
+      "delivery": 15,
+      "reply": 0,
+      "bounce": 1,
+      "flows": 0,
+      "calls": 68,
+      "connected_calls": 0,
+      "leads": 16,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3546,
+      "name": "Adriano Ansaloni"
+    },
+    "data": {
+      "prospects": 195,
+      "opportunity": 3,
+      "business": 6,
+      "client": 0,
+      "lost": 8,
+      "delivery": 41,
+      "reply": 4,
+      "bounce": 1,
+      "flows": 1,
+      "calls": 83,
+      "connected_calls": 0,
+      "leads": 6,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3567,
+      "name": "Sara"
+    },
+    "data": {
+      "prospects": 3,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 1,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3855,
+      "name": "Isabella"
+    },
+    "data": {
+      "prospects": 0,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3929,
+      "name": "lucas"
+    },
+    "data": {
+      "prospects": 0,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3931,
+      "name": "João Elias"
+    },
+    "data": {
+      "prospects": 95,
+      "opportunity": 2,
+      "business": 14,
+      "client": 3,
+      "lost": 9,
+      "delivery": 88,
+      "reply": 14,
+      "bounce": 1,
+      "flows": 1,
+      "calls": 120,
+      "connected_calls": 0,
+      "leads": 21,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3971,
+      "name": "Bernardo Costa"
+    },
+    "data": {
+      "prospects": 0,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3995,
+      "name": "Thais Pimenta"
+    },
+    "data": {
+      "prospects": 32,
+      "opportunity": 1,
+      "business": 3,
+      "client": 0,
+      "lost": 4,
+      "delivery": 5,
+      "reply": 11,
+      "bounce": 1,
+      "flows": 0,
+      "calls": 4,
+      "connected_calls": 0,
+      "leads": 4,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 3996,
+      "name": "Vinicius Souza"
+    },
+    "data": {
+      "prospects": 63,
+      "opportunity": 1,
+      "business": 6,
+      "client": 0,
+      "lost": 0,
+      "delivery": 17,
+      "reply": 8,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 4,
+      "connected_calls": 0,
+      "leads": 6,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 4040,
+      "name": "Elis Mainart"
+    },
+    "data": {
+      "prospects": 37,
+      "opportunity": 0,
+      "business": 2,
+      "client": 0,
+      "lost": 14,
+      "delivery": 15,
+      "reply": 0,
+      "bounce": 1,
+      "flows": 0,
+      "calls": 20,
+      "connected_calls": 0,
+      "leads": 2,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 4042,
+      "name": "Karina Hyuli"
+    },
+    "data": {
+      "prospects": 54,
+      "opportunity": 1,
+      "business": 4,
+      "client": 0,
+      "lost": 3,
+      "delivery": 13,
+      "reply": 0,
+      "bounce": 1,
+      "flows": 0,
+      "calls": 19,
+      "connected_calls": 0,
+      "leads": 5,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 4043,
+      "name": "Victor Ceolin"
+    },
+    "data": {
+      "prospects": 74,
+      "opportunity": 4,
+      "business": 3,
+      "client": 0,
+      "lost": 3,
+      "delivery": 14,
+      "reply": 5,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 29,
+      "connected_calls": 0,
+      "leads": 7,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 4070,
+      "name": "Camilla Fernandes"
+    },
+    "data": {
+      "prospects": 1,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 4391,
+      "name": "Thiago Pacheco"
+    },
+    "data": {
+      "prospects": 0,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 4392,
+      "name": "Diego"
+    },
+    "data": {
+      "prospects": 0,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  },
+  {
+    "user": {
+      "id": 4500,
+      "name": "Rachel Pontes"
+    },
+    "data": {
+      "prospects": 0,
+      "opportunity": 0,
+      "business": 0,
+      "client": 0,
+      "lost": 0,
+      "delivery": 0,
+      "reply": 0,
+      "bounce": 0,
+      "flows": 0,
+      "calls": 0,
+      "connected_calls": 0,
+      "leads": 0,
+      "reev_factor": "--"
+    }
+  }
+]

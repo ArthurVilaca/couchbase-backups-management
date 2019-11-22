@@ -4,6 +4,8 @@ const async = require('async');
 const fs = require('fs');
 const execSync = require('child_process').execSync;
 const default_path = 'restores/'
+const instance = require('./util/instance')
+const axios = require('axios')
 
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY,
@@ -28,6 +30,7 @@ async function listBackups(bucket_name = 'backup-couchbase-tests') {
 
   return new Promise((resolve, reject) => {
     s3.listObjects(params, function (err, data) {
+      if(err) console.log(err)
       resolve(data)
     })
   })
@@ -93,22 +96,27 @@ module.exports = { listBackups, syncBackup };
 
 if (process.argv[1].indexOf('restore.js') > -1) {
   console.log('manual restore')
-  if (process.argv[2]) {
-    listBackups()
-      .then(backups => {
+
+  listBackups()
+    .then(backups => {
+      if (process.argv[3])
+        instance.createInstance()
+          .then(data => {
+            axios.post(`http://${data.Instances[0].PrivateIpAddress}:4444/backups`, { name: backups.CommonPrefixes[backups.CommonPrefixes.length - 1].Prefix })
+          })
+
+      else if (process.argv[2]) {
         let backup = backups.CommonPrefixes[process.argv[2]]
         console.log('restoring', backup)
         syncBackup(backup.Prefix, process.env.BACKUP_BUCKET)
           .then(data => {
             console.log(data)
           })
-      })
-  } else {
-    listBackups()
-      .then(backups => {
+      }
+      else
         for (let backup of backups.CommonPrefixes) {
           console.log(backup.Prefix)
         }
-      })
-  }
+    })
+
 }

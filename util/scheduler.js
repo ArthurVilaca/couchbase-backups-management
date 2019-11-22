@@ -30,6 +30,10 @@ const j = schedule.scheduleJob(monitoring_rule, async () => {
       notify.push(null, 'cpu utilization')
     }
   }
+
+  if (results.swap.free < (results.swap.total / 10)) {
+    notify.push(null, 'swap is too low')
+  }
 })
 
 const rule = new schedule.RecurrenceRule();

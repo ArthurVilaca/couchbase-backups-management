@@ -6,3 +6,9 @@ backup-events/*
 
 !restores/.gitkeep
 !backup-events/.gitkeep
+
+lambda/__pycache__/*
+.ipynb_checkpoints/*
+
+Untitled.ipynb
+py3env/*
